@@ -20,7 +20,7 @@ For each question:
   - Closer to **0** means “not similar”
 
 Example (score matrix view):
-![Similarity matrix dataframe](NLP+Pics/pic_7.png)
+![Similarity matrix dataframe](NLP+Pics/screenshots/screenshots/pic_7.png)
 
 ---
 
@@ -51,7 +51,7 @@ After stopword removal, the notebook also creates a helpful column:
 - `FILTERED_WORDS` (cleaned words for analysis)
 
 Example view of the dataframe:
-![Dataframe with filtered words](NLP+Pics/pic_1.png)
+![Dataframe with filtered words](NLP+Pics/screenshots/pic_1.png)
 
 > Note: In your notebook, the Excel file path is a local Windows path. Update it to your own path when you run it.
 
@@ -87,23 +87,23 @@ Stopwords are common words like **“the”, “is”, “and”** that usually 
 
 After this step, you get cleaner text in `FILTERED_WORDS`.
 
-![Filtered words column](NLP+Pics/pic_1.png)
+![Filtered words column](NLP+Pics/screenshots/pic_1.png)
 
 ### Step 4: Split answers into sentences
 Each answer is split into sentences so you can compare sentence-by-sentence (not just whole paragraphs).
 
 Example (Profile 1 sentences list):
-![Sentence split result](NLP+Pics/pic_3.png)
+![Sentence split result](NLP+Pics/screenshots/pic_3.png)
 
 The logic used to split answers:
-![Sentence splitting code output](NLP+Pics/pic_2.png)
+![Sentence splitting code output](NLP+Pics/screenshots/pic_2.png)
 
 ### Step 5: Create embeddings using SBERT
 You use the model: **paraphrase-MiniLM-L6-v2**.
 
 Each sentence becomes an embedding vector.
 
-![Embedding calculation](NLP+Pics/pic_4.png)
+![Embedding calculation](NLP+Pics/screenshots/pic_4.png)
 
 ### Step 6: Build similarity matrix (cosine similarity)
 For each question:
@@ -111,7 +111,7 @@ For each question:
 - Store the cosine similarity scores in a matrix.
 
 Printed matrix example:
-![Printed similarity matrix](NLP+Pics/pic_5.png)
+![Printed similarity matrix](NLP+Pics/screenshots/pic_5.png)
 
 ### Step 7: Make sentence-pair matrix (optional but useful)
 To help with analysis, you also create a matrix of combined sentence pairs like:
@@ -119,29 +119,29 @@ To help with analysis, you also create a matrix of combined sentence pairs like:
 
 This makes it easy to inspect what matched.
 
-![Sentence-pair matrix](NLP+Pics/pic_6.png)
+![Sentence-pair matrix](NLP+Pics/screenshots/pic_6.png)
 
 ### Step 8: Focus on strong matches with a threshold (example: > 0.75)
 To highlight only the strongest matches, you filter the similarity matrix using a threshold.
 - Example threshold used: **0.75**
 
-![Filtered high similarity pairs](NLP+Pics/pic_8.png)
+![Filtered high similarity pairs](NLP+Pics/screenshots/pic_8.png)
 
 ### Step 9: Summary stats (to understand the matrix)
 You compute descriptive stats to understand score distribution:
 - mean, std, min, max, quartiles
 
 Column-wise stats:
-![Column-wise stats](NLP+Pics/pic_9.png)
+![Column-wise stats](NLP+Pics/screenshots/pic_9.png)
 
 Row-wise stats:
-![Row-wise stats](NLP+Pics/pic_10.png)
+![Row-wise stats](NLP+Pics/screenshots/pic_10.png)
 
 ### Step 10: Matching words between similar sentences (extra analysis)
 After finding high similarity pairs, you also extract **common words** between the two sentences.
 This helps explain *why* two sentences look similar.
 
-![Same words logic and output](NLP+Pics/pic_11.png)
+![Same words logic and output](NLP+Pics/screenshots/pic_11.png)
 
 ---
 
@@ -150,12 +150,12 @@ This helps explain *why* two sentences look similar.
 ### A) Paraphrase mining (find best paraphrase pairs)
 This finds the top sentence pairs that are paraphrases (very similar meaning).
 
-![Paraphrase mining](NLP+Pics/pic_12.png)
+![Paraphrase mining](NLP+Pics/screenshots/pic_12.png)
 
 ### B) Semantic search (search best matching sentence from a corpus)
 This shows how SBERT can match a query to the most relevant sentence.
 
-![Semantic search](NLP+Pics/pic_13.png)
+![Semantic search](NLP+Pics/screenshots/pic_13.png)
 
 ---
 
